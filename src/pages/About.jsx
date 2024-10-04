@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const About = () => {
   return (
@@ -14,9 +15,12 @@ const About = () => {
         <h3 className='subhead-text'>My Skills</h3>
 
         <div className='mt-16 flex flex-wrap gap-12'>
-          
+
         </div>
       </div>
+      <Link to="/contact" className='btn'>
+        Contact
+      </Link>
     </section>
   )
 }
