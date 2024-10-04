@@ -4,7 +4,6 @@ import Loader from '../components/Loader';
 
 import Island from '../models/Island';
 import Sky from '../models/Sky';
-import Bird from '../models/Bird';
 import Plane from '../models/Plane';
 import HomeInfo from '../components/HomeInfo';
 
@@ -55,7 +54,6 @@ const Home = () => {
           <ambientLight intensity={0.5} />
           <hemisphereLight skyColor="#b1e1ff" groundColor="#000000" intensity={1} />
 
-          <Bird />
           <Sky isRotating={isRotating} />
           <Island
             position={islandPosition}
