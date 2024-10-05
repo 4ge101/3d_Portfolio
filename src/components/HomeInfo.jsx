@@ -33,7 +33,7 @@ const renderContent = {
         />),
     4: (
         <InfoBox
-            text="To make any Project contact us"
+            text="To make any Project contact me"
             link="/contact"
             btnText="Let's talk"
         />
