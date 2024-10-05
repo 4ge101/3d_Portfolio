@@ -20,20 +20,20 @@ const renderContent = {
     ),
     2: (
         <InfoBox
-            text="Making many projects and get many skills"
+            text="Making many projects and get many skills in the field of web technology"
             link="/about"
             btnText="Learn more"
         />
     ),
     3: (
         <InfoBox
-            text="Making many projects and get many skills"
+            text="To see my work how i done click down for my projects"
             link="/projects"
             btnText="Visit my portfolio"
         />),
     4: (
         <InfoBox
-            text="Making many projects and get many skills"
+            text="To make any Project contact us"
             link="/contact"
             btnText="Let's talk"
         />

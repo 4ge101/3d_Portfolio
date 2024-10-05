@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaGitAlt, FaLinux, FaGithub } from 'react-icons/fa';
 import Footer from "../components/Footer";
-
+import { SiTypescript } from 'react-icons/si';
 
 const About = () => {
   return (
@@ -19,32 +19,37 @@ const About = () => {
 
         <div className='mt-16 flex justify-center flex-wrap gap-12'>
           <div className='flex flex-col items-center'>
-            <FaHtml5 className='text-6xl shadow-md p-4 rotate-12 text-orange-500 hover:translate-y-[-10px] transition-transform' />
+            <FaHtml5 className='text-6xl shadow-md p-4 rotate-12 rounded-md text-orange-500 hover:translate-y-[-10px] transition-transform' />
             <span className='mt-4'>HTML</span>
           </div>
 
           <div className='flex flex-col items-center'>
-            <FaCss3Alt className='text-6xl shadow-md p-4 rotate-12 text-blue-500 hover:translate-y-[-10px] transition-transform' />
+            <FaCss3Alt className='text-6xl shadow-md p-4 rotate-12 rounded-md text-blue-500 hover:translate-y-[-10px] transition-transform' />
             <span className='mt-4'>CSS</span>
           </div>
 
           <div className='flex flex-col items-center'>
-            <FaJs className='text-6xl shadow-md p-4 rotate-12 text-yellow-500 hover:translate-y-[-10px] transition-transform' />
+            <FaJs className='text-6xl shadow-md p-4 rotate-12 rounded-md text-yellow-500 hover:translate-y-[-10px] transition-transform' />
             <span className='mt-4'>JavaScript</span>
           </div>
 
           <div className='flex flex-col items-center'>
-            <FaLinux className='text-6xl shadow-md p-4 rotate-12 text-black hover:translate-y-[-10px] transition-transform' />
+            <SiTypescript className='text-6xl shadow-md p-4 rotate-12 rounded-md text-yellow-500 hover:translate-y-[-10px] transition-transform' />
+            <span className='mt-4'>TypeScript</span>
+          </div>
+
+          <div className='flex flex-col items-center'>
+            <FaLinux className='text-6xl shadow-md p-4 rotate-12 rounded-md text-black hover:translate-y-[-10px] transition-transform' />
             <span className='mt-4'>Linux</span>
           </div>
 
           <div className='flex flex-col items-center'>
-            <FaGitAlt className='text-6xl p-4 rotate-12 shadow-md text-red-500 hover:translate-y-[-10px] transition-transform' />
+            <FaGitAlt className='text-6xl p-4 rotate-12 shadow-md rounded-md text-red-500 hover:translate-y-[-10px] transition-transform' />
             <span className='mt-4'>Git</span>
           </div>
 
           <div className='flex flex-col items-center'>
-            <FaGithub className='text-6xl p-4 rotate-12 shadow-md text-gray-800 hover:translate-y-[-10px] transition-transform' />
+            <FaGithub className='text-6xl p-4 rotate-12 shadow-md rounded-md text-gray-800 hover:translate-y-[-10px] transition-transform' />
             <span className='mt-4'>GitHub</span>
           </div>
 
