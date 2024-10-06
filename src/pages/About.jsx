@@ -2,6 +2,7 @@ import React from 'react';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaGitAlt, FaLinux, FaGithub } from 'react-icons/fa';
 import Footer from "../components/Footer";
 import { SiTypescript } from 'react-icons/si';
+import CTA from '../components/CTA';
 
 const About = () => {
   return (
@@ -55,6 +56,8 @@ const About = () => {
 
         </div>
       </div>
+
+      <CTA />
 
       <Footer />
     </section>

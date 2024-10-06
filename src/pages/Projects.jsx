@@ -1,5 +1,6 @@
 import React from 'react';
 import Footer from "../components/Footer";
+import CTA from '../components/CTA';
 
 const Projects = () => {
   const projectList = [
@@ -46,6 +47,7 @@ const Projects = () => {
         ))}
       </div>
 
+      <CTA />
       <Footer />
     </section>
   )
