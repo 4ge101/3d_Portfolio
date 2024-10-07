@@ -20,23 +20,23 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
         e.preventDefault();
         setIsRotating(true);
 
-        const clientX = e.touches ? e.touches[0].clientX : e.clientX
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
 
         lastX.current = clientX;
-    }
+    };
 
     const handlePointerUp = (e) => {
         e.stopPropagation();
         e.preventDefault();
         setIsRotating(false);
-    }
+    };
 
     const handlePointerMove = (e) => {
         e.stopPropagation();
         e.preventDefault();
 
         if (isRotating) {
-            const clientX = e.touches ? e.touches[0].clientX : e.clientX
+            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
 
             const delta = (clientX - lastX.current) / viewport.width;
 
@@ -44,26 +44,26 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
             lastX.current = clientX;
             rotationSpeed.current = delta * 0.01 * Math.PI;
         }
-    }
+    };
 
     const handleKeyDown = (e) => {
         if (e.key === 'ArrowLeft') {
             if (!isRotating) setIsRotating(true);
             islandRef.current.rotation.y += 0.01 * Math.PI;
-            rotationSpeed.current.rotation.y = 0.0125;
+            rotationSpeed.current = 0.0125;
         }
         else if (e.key === 'ArrowRight') {
             if (!isRotating) setIsRotating(true);
             islandRef.current.rotation.y -= 0.01 * Math.PI;
-            rotationSpeed.current.rotation.y = -0.0125;
+            rotationSpeed.current = -0.0125;
         }
-    }
+    };
 
     const handleKeyUp = (e) => {
         if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
             setIsRotating(false);
         }
-    }
+    };
 
     useFrame(() => {
         if (!isRotating) {
@@ -74,8 +74,7 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
             }
 
             islandRef.current.rotation.y += rotationSpeed.current;
-        }
-        else {
+        } else {
             const rotation = islandRef.current.rotation.y;
 
             const normalizedRotation =
@@ -99,23 +98,40 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
                     setCurrentStage(null);
             }
         }
-    })
+    });
 
     useEffect(() => {
         const canvas = gl.domElement;
-        canvas.addEventListener('pointerdown', handlePointerDown);
-        canvas.addEventListener('pointerup', handlePointerUp);
-        canvas.addEventListener('pointermove', handlePointerMove);
+
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        
+        if (isTouchDevice) {
+            canvas.addEventListener('touchstart', handlePointerDown);
+            canvas.addEventListener('touchend', handlePointerUp);
+            canvas.addEventListener('touchmove', handlePointerMove);
+        } else {
+            canvas.addEventListener('pointerdown', handlePointerDown);
+            canvas.addEventListener('pointerup', handlePointerUp);
+            canvas.addEventListener('pointermove', handlePointerMove);
+        }
+
         document.addEventListener('keydown', handleKeyDown);
         document.addEventListener('keyup', handleKeyUp);
 
         return () => {
-            canvas.removeEventListener('pointerdown', handlePointerDown);
-            canvas.removeEventListener('pointerup', handlePointerUp);
-            canvas.removeEventListener('pointermove', handlePointerMove);
+            if (isTouchDevice) {
+                canvas.removeEventListener('touchstart', handlePointerDown);
+                canvas.removeEventListener('touchend', handlePointerUp);
+                canvas.removeEventListener('touchmove', handlePointerMove);
+            } else {
+                canvas.removeEventListener('pointerdown', handlePointerDown);
+                canvas.removeEventListener('pointerup', handlePointerUp);
+                canvas.removeEventListener('pointermove', handlePointerMove);
+            }
+
             document.removeEventListener('keydown', handleKeyDown);
             document.removeEventListener('keyup', handleKeyUp);
-        }
+        };
     }, [gl, handlePointerDown, handlePointerUp, handlePointerMove]);
 
     return (
@@ -149,7 +165,7 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
                 material={materials.PaletteMaterial001}
             />
         </a.group>
-    )
-}
+    );
+};
 
-export default Island
+export default Island;
