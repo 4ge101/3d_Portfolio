@@ -1,67 +1,96 @@
-import React from 'react';
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaGitAlt, FaLinux, FaGithub } from 'react-icons/fa';
+import React from "react";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaGitAlt,
+  FaLinux,
+  FaGithub,
+  FaPython,
+} from "react-icons/fa";
+import { SiTypescript, SiRust } from "react-icons/si";
 import Footer from "../components/Footer";
-import { SiTypescript } from 'react-icons/si';
-import CTA from '../components/CTA';
+import CTA from "../components/CTA";
 
 const About = () => {
   return (
-    <section className='max-container'>
-      <h1 className='head-text'>
-        Hello, I'm <span className='blue-gradient_text font-semibold drop-shadow'>Mohammad Sami Ali</span>
+    <section className="max-container">
+      <h1 className="head-text">
+        Hello, I'm{" "}
+        <span className="blue-gradient_text font-semibold drop-shadow">
+          Mohammad Sami Ali
+        </span>
       </h1>
 
-      <div className='mt-5 flex flex-col gap-3 text-slate-800'>
-        <p>Hi, I'm Mohammad Sami Ali, a passionate frontend web developer from Nepal and fun fact is iam 14 year old boy with some skills like HTML, CSS, JS, TS etc</p>
+      <div className="mt-5 flex flex-col gap-3 text-slate-800">
+        <p>
+          Hi, I'm Mohammad Sami Ali, a passionate software developer from Nepal
+          and fun fact is iam 15 year old boy with some skills like Rust, react,
+          JS, TS etc
+        </p>
       </div>
 
-      <div className='py-10 flex flex-col'>
-        <h3 className='subhead-text'>My Skills</h3>
+      <div className="py-10 flex flex-col">
+        <h3 className="subhead-text">My Skills</h3>
 
-        <div className='mt-16 flex justify-center flex-wrap gap-12'>
-          <div className='flex flex-col items-center'>
-            <FaHtml5 className='text-6xl shadow-md p-4 rotate-12 rounded-md text-orange-500 hover:translate-y-[-10px] transition-transform' />
-            <span className='mt-4'>HTML</span>
+        <div className="mt-16 flex justify-center flex-wrap gap-12">
+          <div className="flex flex-col items-center">
+            <FaHtml5 className="text-6xl shadow-md p-4 rotate-12 rounded-md text-orange-500 hover:translate-y-[-10px] transition-transform" />
+            <span className="mt-4">HTML</span>
           </div>
 
-          <div className='flex flex-col items-center'>
-            <FaCss3Alt className='text-6xl shadow-md p-4 rotate-12 rounded-md text-blue-500 hover:translate-y-[-10px] transition-transform' />
-            <span className='mt-4'>CSS</span>
+          <div className="flex flex-col items-center">
+            <FaCss3Alt className="text-6xl shadow-md p-4 rotate-12 rounded-md text-blue-500 hover:translate-y-[-10px] transition-transform" />
+            <span className="mt-4">CSS</span>
           </div>
 
-          <div className='flex flex-col items-center'>
-            <FaJs className='text-6xl shadow-md p-4 rotate-12 rounded-md text-yellow-500 hover:translate-y-[-10px] transition-transform' />
-            <span className='mt-4'>JavaScript</span>
+          <div className="flex flex-col items-center">
+            <FaJs className="text-6xl shadow-md p-4 rotate-12 rounded-md text-yellow-500 hover:translate-y-[-10px] transition-transform" />
+            <span className="mt-4">JavaScript</span>
           </div>
 
-          <div className='flex flex-col items-center'>
-            <SiTypescript className='text-6xl shadow-md p-4 rotate-12 rounded-md text-yellow-500 hover:translate-y-[-10px] transition-transform' />
-            <span className='mt-4'>TypeScript</span>
+          <div className="flex flex-col items-center">
+            <SiTypescript className="text-6xl shadow-md p-4 rotate-12 rounded-md text-blue-600 hover:translate-y-[-10px] transition-transform" />
+            <span className="mt-4">TypeScript</span>
           </div>
 
-          <div className='flex flex-col items-center'>
-            <FaLinux className='text-6xl shadow-md p-4 rotate-12 rounded-md text-black hover:translate-y-[-10px] transition-transform' />
-            <span className='mt-4'>Linux</span>
+          <div className="flex flex-col items-center">
+            <FaReact className="text-6xl shadow-md p-4 rotate-12 rounded-md text-cyan-400 hover:translate-y-[-10px] transition-transform" />
+            <span className="mt-4">React</span>
           </div>
 
-          <div className='flex flex-col items-center'>
-            <FaGitAlt className='text-6xl p-4 rotate-12 shadow-md rounded-md text-red-500 hover:translate-y-[-10px] transition-transform' />
-            <span className='mt-4'>Git</span>
+          <div className="flex flex-col items-center">
+            <SiRust className="text-6xl shadow-md p-4 rotate-12 rounded-md text-black hover:translate-y-[-10px] transition-transform" />
+            <span className="mt-4">Rust</span>
           </div>
 
-          <div className='flex flex-col items-center'>
-            <FaGithub className='text-6xl p-4 rotate-12 shadow-md rounded-md text-gray-800 hover:translate-y-[-10px] transition-transform' />
-            <span className='mt-4'>GitHub</span>
+          <div className="flex flex-col items-center">
+            <FaPython className="text-6xl shadow-md p-4 rotate-12 rounded-md text-yellow-500 hover:translate-y-[-10px] transition-transform" />
+            <span className="mt-4">Python</span>
           </div>
 
+          <div className="flex flex-col items-center">
+            <FaLinux className="text-6xl shadow-md p-4 rotate-12 rounded-md text-black hover:translate-y-[-10px] transition-transform" />
+            <span className="mt-4">Linux</span>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <FaGitAlt className="text-6xl p-4 rotate-12 shadow-md rounded-md text-red-500 hover:translate-y-[-10px] transition-transform" />
+            <span className="mt-4">Git</span>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <FaGithub className="text-6xl p-4 rotate-12 shadow-md rounded-md text-gray-800 hover:translate-y-[-10px] transition-transform" />
+            <span className="mt-4">GitHub</span>
+          </div>
         </div>
       </div>
 
       <CTA />
-
       <Footer />
     </section>
   );
-}
+};
 
 export default About;
